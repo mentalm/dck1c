@@ -35,7 +35,7 @@ RUN export uid=1000 gid=1000 && \
       echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/user && \
       chmod 0440 /etc/sudoers.d/user && \
       chown user:user -R /home/user && \
-      find . -type d -exec chmod 775 {} + /home/
+      find /home/ -type d -exec chmod 775 {} +
 
 USER user
 ENV HOME /home/user
